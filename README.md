@@ -6,6 +6,7 @@ This is the frontend for the MudaTap Application. It is built using Vue.js, with
 - Vue 3 / Vuex
 - Tailwind CSS
 - Vite
+- Vue Tailwind admin template. [See Here](https://github.com/Murked/vue-tailwind-admin)
 
 ## Setup and Running
 
