@@ -20,15 +20,15 @@
 		<div class="flex flex-wrap -mx-3 mb-20">
 			<div class="w-1/2 xl:w-1/4 px-3">
 				<div class="w-full bg-white border text-blue-400 rounded-lg flex items-center p-6 mb-6 xl:mb-0">
-          <svg class="h-16 w-16 text-blue-400 mr-2"  width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> 
-            <path stroke="none" d="M0 0h24v24H0z"/> 
-            <rect x="4" y="5" width="16" height="16" rx="2" />
-            <line x1="16" y1="3" x2="16" y2="7" />
-            <line x1="8" y1="3" x2="8" y2="7" />
-            <line x1="4" y1="11" x2="20" y2="11" />
-            <line x1="11" y1="15" x2="12" y2="15" />
-            <line x1="12" y1="15" x2="12" y2="18" />
-          </svg>
+					<svg class="h-16 w-16 text-blue-400 mr-2"  width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> 
+						<path stroke="none" d="M0 0h24v24H0z"/> 
+						<rect x="4" y="5" width="16" height="16" rx="2" />
+						<line x1="16" y1="3" x2="16" y2="7" />
+						<line x1="8" y1="3" x2="8" y2="7" />
+						<line x1="4" y1="11" x2="20" y2="11" />
+						<line x1="11" y1="15" x2="12" y2="15" />
+						<line x1="12" y1="15" x2="12" y2="18" />
+					</svg>
 					<div class="text-gray-700">
 						<p class="font-semibold text-3xl">160</p>
 						<p>Days Present</p>
@@ -39,11 +39,11 @@
 			<div class="w-1/2 xl:w-1/4 px-3">
 				<div class="w-full bg-white border text-blue-400 rounded-lg flex items-center p-6 mb-6 xl:mb-0">
 					<svg class="h-16 w-16 text-blue-400 mr-2"  width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z"/>
-            <polyline points="5 12 3 12 12 3 21 12 19 12" />
-            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-            <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
-          </svg>
+						<path stroke="none" d="M0 0h24v24H0z"/>
+						<polyline points="5 12 3 12 12 3 21 12 19 12" />
+						<path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+						<path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+					</svg>
 					<div class="text-gray-700">
 						<p class="font-semibold text-3xl">10</p>
 						<p>Leaves Taken</p>
@@ -54,11 +54,11 @@
 			<div class="w-1/2 xl:w-1/4 px-3">
 				<div class="w-full bg-white border text-blue-400 rounded-lg flex items-center p-6">
 					<svg class="h-16 w-16 text-blue-400 mr-2"  width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z"/>
-            <path d="M3 21v-13l9-4l9 4v13" />
-            <path d="M13 13h4v8h-10v-6h6" />
-            <path d="M13 21v-9a1 1 0 0 0 -1 -1h-2a1 1 0 0 0 -1 1v3" />
-          </svg>
+						<path stroke="none" d="M0 0h24v24H0z"/>
+						<path d="M3 21v-13l9-4l9 4v13" />
+						<path d="M13 13h4v8h-10v-6h6" />
+						<path d="M13 21v-9a1 1 0 0 0 -1 -1h-2a1 1 0 0 0 -1 1v3" />
+					</svg>
 					<div class="text-gray-700">
 						<p class="font-semibold text-3xl">31</p>
 						<p>Leaves Available</p>
@@ -69,13 +69,13 @@
 			<div class="w-1/2 xl:w-1/4 px-3">
 				<div class="w-full bg-white border text-blue-400 rounded-lg flex items-center p-6">
 					<svg class="h-16 w-16 text-blue-400 mr-2"  width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z"/>
-            <circle cx="12" cy="12" r="9" />
-            <line x1="3.6" y1="9" x2="20.4" y2="9" />
-            <line x1="3.6" y1="15" x2="20.4" y2="15" />
-            <path d="M11.5 3a17 17 0 0 0 0 18" />
-            <path d="M12.5 3a17 17 0 0 1 0 18" />
-          </svg>
+						<path stroke="none" d="M0 0h24v24H0z"/>
+						<circle cx="12" cy="12" r="9" />
+						<line x1="3.6" y1="9" x2="20.4" y2="9" />
+						<line x1="3.6" y1="15" x2="20.4" y2="15" />
+						<path d="M11.5 3a17 17 0 0 0 0 18" />
+						<path d="M12.5 3a17 17 0 0 1 0 18" />
+					</svg>
 					<div class="text-gray-700">
 						<p class="font-semibold text-3xl">5/20</p>
 						<p>Holidays Taken</p>
@@ -86,33 +86,33 @@
     <!-- Analytic blocks end -->
 
     <!-- Clockin -->
-    <div class="flex flex-wrap -mx-2 mb-20">
-			<div class="w-[25rem] px-8">
-				<div class="w-full bg-green-500 border hover:bg-green-600 text-white rounded-lg flex items-center p-6 mb-6 xl:mb-0">
-          <svg class="h-8 w-8 text-white mr-2"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <polyline points="12 6 12 12 16 14" /></svg>
-					<div class="text-white">
-						<p class="font-semibold text-2xl">Clockin</p>
-					</div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-20">
+		<div class="w-[22rem] l:w-[25rem] px-8">
+			<div class="w-full bg-green-500 border hover:bg-green-600 text-white rounded-lg flex items-center p-6 mb-6 xl:mb-0">
+                <svg class="h-8 w-8 text-white mr-2"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <polyline points="12 6 12 12 16 14" /></svg>
+				<div class="text-white">
+					<p class="font-semibold text-2xl">Clockin</p>
 				</div>
 			</div>
+		</div>
 
-			<div class="w-[25rem] px-8">
-				<div class="w-full bg-red-500 border hover:bg-red-600 text-white rounded-lg flex items-center p-6 mb-6 xl:mb-0">
-          <svg class="h-8 w-8 text-white mr-2"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <polyline points="12 6 12 12 16 14" /></svg>
-					<div class="text-white">
-						<p class="font-semibold text-2xl">Clockout</p>
-					</div>
+		<div class="w-[22rem] l:w-[25rem] px-8">
+			<div class="w-full bg-red-500 border hover:bg-red-600 text-white rounded-lg flex items-center p-6 mb-6 xl:mb-0">
+    			<svg class="h-8 w-8 text-white mr-2"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <polyline points="12 6 12 12 16 14" /></svg>
+				<div class="text-white">
+					<p class="font-semibold text-2xl">Clockout</p>
 				</div>
 			</div>
+		</div>
 
-			<div class="w-[25rem] px-8">
-				<div class="w-full bg-orange-500 border hover:bg-orange-600 text-white rounded-lg flex items-center p-6 mb-6 xl:mb-0">
-          <svg class="h-8 w-8 text-white mr-2"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="4" y="5" width="16" height="16" rx="2" />  <line x1="16" y1="3" x2="16" y2="7" />  <line x1="8" y1="3" x2="8" y2="7" />  <line x1="4" y1="11" x2="20" y2="11" />  <line x1="11" y1="15" x2="12" y2="15" />  <line x1="12" y1="15" x2="12" y2="18" /></svg>
-					<div class="text-white">
-						<p class="font-semibold text-2xl">Custom</p>
-					</div>
+		<div class="w-[22rem] l:w-[25rem] px-8">
+			<div class="w-full bg-orange-500 border hover:bg-orange-600 text-white rounded-lg flex items-center p-6 mb-6 xl:mb-0">
+          		<svg class="h-8 w-8 text-white mr-2"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="4" y="5" width="16" height="16" rx="2" />  <line x1="16" y1="3" x2="16" y2="7" />  <line x1="8" y1="3" x2="8" y2="7" />  <line x1="4" y1="11" x2="20" y2="11" />  <line x1="11" y1="15" x2="12" y2="15" />  <line x1="12" y1="15" x2="12" y2="18" /></svg>
+				<div class="text-white">
+					<p class="font-semibold text-2xl">Custom</p>
 				</div>
 			</div>
+		</div>
     </div>
     <!-- Clockin end -->
     
