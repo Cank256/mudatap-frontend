@@ -61,7 +61,7 @@
           </svg>
 					<div class="text-gray-700">
 						<p class="font-semibold text-3xl">31</p>
-						<p>Leave Available</p>
+						<p>Leaves Available</p>
 					</div>
 				</div>
 			</div>
