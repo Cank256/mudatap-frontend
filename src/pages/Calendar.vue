@@ -14,7 +14,23 @@
         </ol>
       </nav>
       <!-- breadcrumb end -->
-      <FullCalendar :options="calendarOptions" />
+      <div class='min-h-full flex flex-wrap'>
+        <div class='grow'>
+          <FullCalendar :options='calendarOptions' />
+        </div>
+
+        <div class='w-[250px] border-[1px] border-[#f3f4f6] border-l-[#d3e2e8]'>
+          <div class='p-2'>
+            <h2 class="font-semibold">All Events ({{ currentEvents.length }})</h2>
+            <ul>
+              <li v-for='event in currentEvents' :key='event.id'>
+                <b class>{{ event.startStr }}</b>
+                <i>{{ event.title }}</i>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 </template>
 
@@ -23,7 +39,7 @@ import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
-import { createEventId } from '../utils/events'
+import { INITIAL_EVENTS, createEventId } from '../utils/events'
 
 export default {
   components: {
@@ -43,6 +59,7 @@ export default {
           right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
         initialView: 'dayGridMonth',
+        initialEvents: INITIAL_EVENTS,
         editable: true,
         selectable: true,
         selectMirror: true,
@@ -85,3 +102,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.fc { /* the calendar root */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+</style>
