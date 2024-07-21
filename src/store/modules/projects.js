@@ -1,6 +1,8 @@
 // src/store/modules/projects.js
 import axios from 'axios';
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 const state = {
     projects: [],
     loading: false,
@@ -41,7 +43,7 @@ const actions = {
     async fetchProjects({ commit }) {
         commit('SET_LOADING', true);
         try {
-            const response = await axios.get('http://localhost:3000/projects');
+            const response = await axios.get(apiUrl + 'projects');
             commit('SET_PROJECTS', response.data);
         } catch (error) {
             commit('SET_ERROR', error);

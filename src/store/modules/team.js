@@ -1,6 +1,8 @@
 // src/store/modules/team.js
 import axios from 'axios';
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 const state = {
     team: [],
     loading: false,
@@ -45,7 +47,7 @@ const actions = {
     async fetchTeam({ commit }) {
         commit('SET_LOADING', true);
         try {
-            const response = await axios.get('http://localhost:3000/api/team');
+            const response = await axios.get(apiUrl + 'team');
             commit('SET_TEAM', response.data);
         } catch (error) {
             commit('SET_ERROR', error);

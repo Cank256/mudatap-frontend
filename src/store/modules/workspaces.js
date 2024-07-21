@@ -1,6 +1,8 @@
 // src/store/modules/workspaces.js
 import axios from 'axios';
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 const state = {
     workspaces: [],
     loading: false,
@@ -41,7 +43,7 @@ const actions = {
     async fetchWorkspaces({ commit }) {
         commit('SET_LOADING', true);
         try {
-            const response = await axios.get('http://localhost:3000/workspaces');
+            const response = await axios.get(apiUrl + 'workspaces');
             commit('SET_WORKSPACES', response.data);
         } catch (error) {
             commit('SET_ERROR', error);
