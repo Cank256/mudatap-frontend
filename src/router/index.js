@@ -3,6 +3,7 @@ import MainComponent from '@/components/Main.vue'
 import DashboardPage from '@/pages/Dashboard.vue'
 import TrackerPage from '@/pages/Tracker.vue'
 import CalendarPage from '@/pages/Calendar.vue'
+import TeamPage from '@/pages/Team.vue'
 
 const routes = [
   { path: '/', redirect: { name: 'Dashboard' } },
@@ -17,6 +18,11 @@ const routes = [
   { path: '/calendar', component: MainComponent, children: [
       { path: '', name: 'Calendar', component: CalendarPage }
     ] 
+  },
+  {
+    path: '/team', component: MainComponent, children: [
+      { path: '', name: 'Team', component: TeamPage}
+    ]
   }
 ]
 

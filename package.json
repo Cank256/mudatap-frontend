@@ -16,6 +16,7 @@
     "@fullcalendar/vue3": "^6.1.15",
     "chart.js": "^4.4.3",
     "core-js": "^3.37.1",
+    "html2canvas": "^1.4.1",
     "path": "^0.12.7",
     "vue": "^3.4.31",
     "vue-chartjs": "^5.3.1",

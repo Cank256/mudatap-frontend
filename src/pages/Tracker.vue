@@ -4,7 +4,7 @@
 		<nav class="text-sm font-semibold mb-6" aria-label="Breadcrumb">
 			<ol class="list-none p-0 inline-flex">
 				<li class="flex items-center text-blue-500">
-					<a href="#" class="text-gray-700">Home</a>
+					<a href="#" class="text-gray-700">Dashboard</a>
 					<svg class="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" >
 						<path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>
 					</svg>
@@ -87,7 +87,7 @@
 
     <!-- Clockin -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-20">
-		<div class="w-[22rem] l:w-[25rem] px-8">
+		<div class="w-[22rem] l:w-[25rem] px-8" @click="clockIn">
 			<div class="w-full bg-green-500 border hover:bg-green-600 text-white rounded-lg flex items-center p-6 mb-6 xl:mb-0">
                 <svg class="h-8 w-8 text-white mr-2"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <polyline points="12 6 12 12 16 14" /></svg>
 				<div class="text-white">
@@ -96,7 +96,7 @@
 			</div>
 		</div>
 
-		<div class="w-[22rem] l:w-[25rem] px-8">
+		<div class="w-[22rem] l:w-[25rem] px-8" @click="clockOut">
 			<div class="w-full bg-red-500 border hover:bg-red-600 text-white rounded-lg flex items-center p-6 mb-6 xl:mb-0">
     			<svg class="h-8 w-8 text-white mr-2"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="10" />  <polyline points="12 6 12 12 16 14" /></svg>
 				<div class="text-white">
@@ -105,7 +105,7 @@
 			</div>
 		</div>
 
-		<div class="w-[22rem] l:w-[25rem] px-8">
+		<div class="w-[22rem] l:w-[25rem] px-8" @click="customTracker">
 			<div class="w-full bg-orange-500 border hover:bg-orange-600 text-white rounded-lg flex items-center p-6 mb-6 xl:mb-0">
           		<svg class="h-8 w-8 text-white mr-2"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="4" y="5" width="16" height="16" rx="2" />  <line x1="16" y1="3" x2="16" y2="7" />  <line x1="8" y1="3" x2="8" y2="7" />  <line x1="4" y1="11" x2="20" y2="11" />  <line x1="11" y1="15" x2="12" y2="15" />  <line x1="12" y1="15" x2="12" y2="18" /></svg>
 				<div class="text-white">
@@ -136,6 +136,17 @@
 export default {
 	name: "TrackerPage",
 	data() {},
+	methods: {
+		clockIn() {
+			alert("Clock In");
+		},
+		clockOut() {
+			alert("Clock Out");
+		},
+		customTracker() {
+			alert("Custom Tracker");
+		},
+	},
 	mounted() {},
 };
 </script>
