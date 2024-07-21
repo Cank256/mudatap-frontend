@@ -57,31 +57,33 @@
 		<!-- team list -->
 
 		<div class="bg-white rounded-lg overflow-hidden">
-            <table class="w-full table-auto">
-                <thead>
-                    <tr class="bg-gray-200 text-gray-600 text-sm leading-normal">
-                        <th class="py-3 px-6 text-left">Name</th>
-                        <th class="py-3 px-6 text-left">Email</th>
-                        <th class="py-3 px-6 text-left">Workspace</th>
-                        <th class="py-3 px-6 text-center">Department</th>
-                        <th class="py-3 px-6 text-center">Role</th>
-                        <th class="py-3 px-6 text-center">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="member in filteredTeam" :key="member.id"  class="text-gray-600 text-sm leading-normal">
-                        <td class="py-3 px-6 text-left">{{ member.name }}</td>
-                        <td class="py-3 px-6 text-left">{{ member.email }}</td>
-                        <td class="py-3 px-6 text-left">{{ member.workspace }}</td>
-                        <td class="py-3 px-6 text-left">{{ member.department }}</td>
-                        <td class="py-3 px-6 text-center">{{ member.role }}</td>
-                        <td class="py-3 px-6 text-center">
-                            <button class="bg-blue-500 hover:bg-blue-600 focus:outline-none rounded-lg px-4 py-2 mr-2 text-white font-semibold shadow">Edit</button>
-                            <button class="bg-red-500 hover:bg-red-600 focus:outline-none rounded-lg px-4 py-2 text-white font-semibold shadow">Delete</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+			<div class="overflow-x-auto">
+				<table class="w-full table-auto">
+					<thead>
+						<tr class="bg-gray-200 text-gray-600 text-sm leading-normal">
+							<th class="py-3 px-6 text-left">Name</th>
+							<th class="py-3 px-6 text-left">Email</th>
+							<th class="py-3 px-6 text-left">Workspace</th>
+							<th class="py-3 px-6 text-center">Department</th>
+							<th class="py-3 px-6 text-center">Role</th>
+							<th class="py-3 px-6 text-center">Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr v-for="member in filteredTeam" :key="member.id"  class="text-gray-600 text-sm leading-normal">
+							<td class="py-3 px-6 text-left">{{ member.name }}</td>
+							<td class="py-3 px-6 text-left">{{ member.email }}</td>
+							<td class="py-3 px-6 text-left">{{ member.workspace }}</td>
+							<td class="py-3 px-6 text-left">{{ member.department }}</td>
+							<td class="py-3 px-6 text-center">{{ member.role }}</td>
+							<td class="py-3 px-6 text-center">
+								<button class="bg-blue-500 hover:bg-blue-600 focus:outline-none rounded-lg px-4 py-2 mr-2 text-white font-semibold shadow">Edit</button>
+								<button class="bg-red-500 hover:bg-red-600 focus:outline-none rounded-lg px-4 py-2 text-white font-semibold shadow">Delete</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
         </div>
 	</div>
 </template>
