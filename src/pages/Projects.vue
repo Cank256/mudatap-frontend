@@ -1,5 +1,5 @@
 <template>
-	<div id="workspaces">
+	<div id="projects">
 		<!-- breadcrumb -->
 		<nav class="text-sm font-semibold mb-6" aria-label="Breadcrumb">
 			<ol class="list-none p-0 inline-flex">
@@ -16,7 +16,7 @@
 					</svg>
 				</li>
 				<li class="flex items-center">
-					<a href="#" class="text-gray-600">Workspaces</a>
+					<a href="#" class="text-gray-600">Projects</a>
 				</li>
 			</ol>
 		</nav>
@@ -27,7 +27,7 @@
 			<button
 				class="bg-blue-500 hover:bg-blue-600 focus:outline-none rounded-lg px-6 py-2 text-white font-semibold shadow"
 			>
-				Add Workspace
+				Add Project
 			</button>
 		</div>
 
@@ -61,12 +61,16 @@
                 <thead>
                     <tr class="bg-gray-200 text-gray-600 text-sm leading-normal">
                         <th class="py-3 px-6 text-left">Name</th>
+                        <th class="py-3 px-6 text-left">Description</th>
+                        <th class="py-3 px-6 text-left">Manager</th>
                         <th class="py-3 px-6 text-center">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="workspace in filteredWorkspaces" :key="workspace.id"  class="text-gray-600 text-sm leading-normal">
-                        <td class="py-3 px-6 text-left">{{ workspace.name }}</td>
+                    <tr v-for="project in filteredProjects" :key="project.id"  class="text-gray-600 text-sm leading-normal">
+                        <td class="py-3 px-6 text-left">{{ project.name }}</td>
+                        <td class="py-3 px-6 text-left">{{ project.description }}</td>
+                        <td class="py-3 px-6 text-left">{{ project.manager }}</td>
                         <td class="py-3 px-6 text-center">
                             <button class="bg-blue-500 hover:bg-blue-600 focus:outline-none rounded-lg px-4 py-2 mr-2 text-white font-semibold shadow">Edit</button>
                             <button class="bg-red-500 hover:bg-red-600 focus:outline-none rounded-lg px-4 py-2 text-white font-semibold shadow">Delete</button>
@@ -80,17 +84,21 @@
 
 <script>
 export default {
-	name: "WorkspacesPage",
+	name: "ProjectsPage",
 	data() {
 		return {
-			workspaces: [
+			projects: [
 				{
                     id: 1,
-					name: "Luigi Giussani Foundation"
+					name: "SAY",
+                    description: "Youth skill and livelihood empowerment",
+                    manager: "Patricia Atukunda"
 				},
 				{
                     id: 2,
-					name: "Luigi Giussani Institute of Higher Education",
+					name: "ECHIDNA",
+                    description: "Critical Thinking trainings and evaluation",
+                    manager: "Christine Nassanga"
 				}
 			],
             searchQuery: '',
@@ -99,8 +107,8 @@ export default {
 		};
 	},
     computed: {
-        filteredWorkspaces() {
-            return this.workspaces.filter(member => {
+        filteredProjects() {
+            return this.projects.filter(member => {
                 return (
                     member.name.toLowerCase().includes(this.searchQuery.toLowerCase())
                 );
@@ -114,8 +122,8 @@ export default {
 		async fetchData() {
 			try {
 				this.loading = true;
-				const response = await fetch("http://localhost:3000/api/workspaces");
-				this.workspaces = await response.json();
+				const response = await fetch("http://localhost:3000/api/projects");
+				this.projects = await response.json();
 			} catch (error) {
 				this.error = error;
 			} finally {

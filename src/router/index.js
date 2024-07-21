@@ -5,6 +5,7 @@ import TrackerPage from '@/pages/Tracker.vue'
 import CalendarPage from '@/pages/Calendar.vue'
 import TeamPage from '@/pages/Team.vue'
 import WorkspacesPage from '@/pages/Workspaces.vue'
+import ProjectsPage from '@/pages/Projects.vue'
 
 const routes = [
   { path: '/', redirect: { name: 'Dashboard' } },
@@ -28,6 +29,11 @@ const routes = [
   {
     path: '/workspaces', component: MainComponent, children: [
       { path: '', name: 'Workspaces', component: WorkspacesPage}
+    ]
+  },
+  {
+    path: '/projects', component: MainComponent, children: [
+      { path: '', name: 'Projects', component: ProjectsPage}
     ]
   }
 ]
