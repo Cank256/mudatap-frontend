@@ -69,49 +69,18 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
 	name: "WorkspacesPage",
-	data() {
-		return {
-			workspaces: [
-				{
-                    id: 1,
-					name: "Luigi Giussani Foundation"
-				},
-				{
-                    id: 2,
-					name: "Luigi Giussani Institute of Higher Education",
-				}
-			],
-            searchQuery: '',
-			loading: true,
-			error: null,
-		};
-	},
-    computed: {
-        filteredWorkspaces() {
-            return this.workspaces.filter(member => {
-                return (
-                    member.name.toLowerCase().includes(this.searchQuery.toLowerCase())
-                );
-            });
-        }
-    },
-	created() {
-		this.fetchData();
+	computed: {
+		...mapGetters('workspaces', ['filteredWorkspaces', 'searchQuery'])
 	},
 	methods: {
-		async fetchData() {
-			try {
-				this.loading = true;
-				const response = await fetch("http://localhost:3000/api/workspaces");
-				this.workspaces = await response.json();
-			} catch (error) {
-				this.error = error;
-			} finally {
-				this.loading = false;
-			}
-		},
+		...mapActions('workspaces', ['fetchWorkspaces', 'setSearchQuery'])
 	},
+	created() {
+		this.fetchWorkspaces();
+	}
 };
 </script>

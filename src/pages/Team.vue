@@ -39,18 +39,6 @@
                     placeholder="Search..." 
                     class="border rounded-lg px-4 py-2 mr-2"
                 />
-                <!-- <button
-                    class="bg-blue-500 hover:bg-blue-600 focus:outline-none rounded-lg px-6 py-2 text-white font-semibold shadow mr-2"
-                    @click="exportTable"
-                >
-                    Export PDF
-                </button>
-                <button
-                    class="bg-gray-500 hover:bg-gray-600 focus:outline-none rounded-lg px-6 py-2 text-white font-semibold shadow"
-                    @click="printTable"
-                >
-                    Print
-                </button> -->
             </div>
         </div>
 
@@ -89,73 +77,18 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
 	name: "TeamPage",
-	data() {
-		return {
-			team: [
-				{
-					name: "Caleb Nkunze",
-					email: "c.nkunze@lgfug.org",
-					workspace: "Luigi Giussani Foundation",
-					department: "Information Technology",
-					role: "Manager",
-				},
-				{
-					name: "John Muhangyi",
-					email: "m.muhangyi@lgfug.org",
-					workspace: "Luigi Giussani Foundation",
-					department: "Programmes",
-					role: "Director",
-				},
-				{
-					name: "Kakeeto Jonathan",
-					email: "logistics@lgfug.org",
-					workspace: "Luigi Giussani Foundation",
-					department: "Accounts",
-					role: "Officer",
-				},
-				{
-					name: "Josephine",
-					email: "j.auma@lgfug.org",
-					workspace: "Luigi Giussani Foundation",
-					department: "Human Resources",
-					role: "Officer",
-				},
-			],
-            searchQuery: '',
-			loading: true,
-			error: null,
-		};
-	},
-    computed: {
-        filteredTeam() {
-            return this.team.filter(member => {
-                return (
-                    member.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-                    member.email.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-                    member.workspace.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-                    member.department.toLowerCase().includes(this.searchQuery.toLowerCase())||
-                    member.role.toLowerCase().includes(this.searchQuery.toLowerCase())
-                );
-            });
-        }
-    },
-	created() {
-		this.fetchData();
+	computed: {
+		...mapGetters('team', ['filteredTeam', 'searchQuery'])
 	},
 	methods: {
-		async fetchData() {
-			try {
-				this.loading = true;
-				const response = await fetch("http://localhost:3000/api/team");
-				this.team = await response.json();
-			} catch (error) {
-				this.error = error;
-			} finally {
-				this.loading = false;
-			}
-		},
+		...mapActions('team', ['fetchTeam', 'setSearchQuery'])
 	},
+	created() {
+		this.fetchTeam();
+	}
 };
 </script>

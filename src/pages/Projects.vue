@@ -73,53 +73,18 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
 	name: "ProjectsPage",
-	data() {
-		return {
-			projects: [
-				{
-                    id: 1,
-					name: "SAY",
-                    description: "Youth skill and livelihood empowerment",
-                    manager: "Patricia Atukunda"
-				},
-				{
-                    id: 2,
-					name: "ECHIDNA",
-                    description: "Critical Thinking trainings and evaluation",
-                    manager: "Christine Nassanga"
-				}
-			],
-            searchQuery: '',
-			loading: true,
-			error: null,
-		};
-	},
-    computed: {
-        filteredProjects() {
-            return this.projects.filter(member => {
-                return (
-                    member.name.toLowerCase().includes(this.searchQuery.toLowerCase())
-                );
-            });
-        }
-    },
-	created() {
-		this.fetchData();
+	computed: {
+		...mapGetters('projects', ['filteredProjects', 'searchQuery'])
 	},
 	methods: {
-		async fetchData() {
-			try {
-				this.loading = true;
-				const response = await fetch("http://localhost:3000/api/projects");
-				this.projects = await response.json();
-			} catch (error) {
-				this.error = error;
-			} finally {
-				this.loading = false;
-			}
-		},
+		...mapActions('projects', ['fetchProjects', 'setSearchQuery'])
 	},
+	created() {
+		this.fetchProjects();
+	}
 };
 </script>
