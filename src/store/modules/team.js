@@ -15,7 +15,7 @@ const getters = {
     loading: (state) => state.loading,
     error: (state) => state.error,
     filteredTeam: (state) => {
-        return state.team.filter(member => {
+        return Array.isArray(state.team) ? state.team.filter(member => {
             return (
                 member.name.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
                 member.email.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
@@ -23,14 +23,14 @@ const getters = {
                 member.department.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
                 member.role.toLowerCase().includes(state.searchQuery.toLowerCase())
             );
-        });
+        }) : [];
     },
     searchQuery: (state) => state.searchQuery
 };
 
 const mutations = {
     SET_TEAM(state, team) {
-        state.team = team;
+        state.team = Array.isArray(team) ? team : [];
     },
     SET_LOADING(state, loading) {
         state.loading = loading;
@@ -47,7 +47,7 @@ const actions = {
     async fetchTeam({ commit }) {
         commit('SET_LOADING', true);
         try {
-            const response = await axios.get(apiUrl + 'team');
+            const response = await axios.get(`${apiUrl}users`);
             commit('SET_TEAM', response.data);
         } catch (error) {
             commit('SET_ERROR', error);
