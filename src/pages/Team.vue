@@ -24,9 +24,7 @@
 
 		<div class="lg:flex justify-between items-center mb-6">
 			<p class="text-2xl font-semibold mb-2 lg:mb-0"></p>
-			<button
-				class="bg-blue-500 hover:bg-blue-600 focus:outline-none rounded-lg px-6 py-2 text-white font-semibold shadow"
-			>
+			<button class="bg-blue-500 hover:bg-blue-600 focus:outline-none rounded-lg px-6 py-2 text-white font-semibold shadow" @click="openUserAddModal">
 				Add Team Member
 			</button>
 		</div>
@@ -73,14 +71,32 @@
 				</table>
 			</div>
         </div>
+		<AddUserModal v-model="isUserAddModalOpen" />
 	</div>
 </template>
 
 <script>
+import { ref } from 'vue';
 import { mapGetters, mapActions } from 'vuex';
+import AddUserModal from '../components/Modals/AddUser.vue';
 
 export default {
 	name: "TeamPage",
+	components: {
+		AddUserModal
+	},
+	setup() {
+		const isUserAddModalOpen = ref(false);
+
+		const openUserAddModal = () => {
+			isUserAddModalOpen.value = true;
+		};
+
+		return {
+			isUserAddModalOpen,
+			openUserAddModal,
+		};
+	},
 	computed: {
 		...mapGetters('team', ['filteredTeam', 'searchQuery'])
 	},
