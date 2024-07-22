@@ -1,6 +1,6 @@
 <template>
 	<div id="team">
-		<!-- breadcrumb -->
+	  <!-- breadcrumb -->
 		<nav class="text-sm font-semibold mb-6" aria-label="Breadcrumb">
 			<ol class="list-none p-0 inline-flex">
 				<li class="flex items-center text-blue-500">
@@ -20,29 +20,29 @@
 				</li>
 			</ol>
 		</nav>
-		<!-- breadcrumb end -->
-
-		<div class="lg:flex justify-between items-center mb-6">
-			<p class="text-2xl font-semibold mb-2 lg:mb-0"></p>
-			<button class="bg-blue-500 hover:bg-blue-600 focus:outline-none rounded-lg px-6 py-2 text-white font-semibold shadow" @click="openUserAddModal">
-				Add Team Member
-			</button>
+	  <!-- breadcrumb end -->
+  
+	  <div class="lg:flex justify-between items-center mb-6">
+		<p class="text-2xl font-semibold mb-2 lg:mb-0"></p>
+		<button class="bg-blue-500 hover:bg-blue-600 focus:outline-none rounded-lg px-6 py-2 text-white font-semibold shadow" @click="openUserAddModal">
+		  Add Team Member
+		</button>
+	  </div>
+  
+	  <div class="lg:flex justify-between items-center mb-6">
+		<p class="text-2xl font-semibold mb-2 lg:mb-0"></p>
+		<div class="flex">
+		  <input 
+			v-model="searchQuery" 
+			placeholder="Search..." 
+			class="border rounded-lg px-4 py-2 mr-2"
+		  />
 		</div>
-
-        <div class="lg:flex justify-between items-center mb-6">
-            <p class="text-2xl font-semibold mb-2 lg:mb-0"></p>
-            <div class="flex">
-                <input 
-                    v-model="searchQuery" 
-                    placeholder="Search..." 
-                    class="border rounded-lg px-4 py-2 mr-2"
-                />
-            </div>
-        </div>
-
-		<!-- team list -->
-
-		<div class="bg-white rounded-lg overflow-hidden">
+	  </div>
+  
+	  <!-- team list -->
+  
+	  <div class="bg-white rounded-lg overflow-hidden">
 			<div class="overflow-x-auto">
 				<table class="w-full table-auto">
 					<thead>
@@ -57,7 +57,7 @@
 					</thead>
 					<tbody>
 						<tr v-for="member in filteredTeam" :key="member.id"  class="text-gray-600 text-sm leading-normal">
-							<td class="py-3 px-6 text-left">{{ member.name }}</td>
+							<td class="py-3 px-6 text-left">{{ member.name ? member.name : "(Not Active)" }}</td>
 							<td class="py-3 px-6 text-left">{{ member.email }}</td>
 							<td class="py-3 px-6 text-left">{{ member.workspace }}</td>
 							<td class="py-3 px-6 text-left">{{ member.department }}</td>
@@ -71,40 +71,40 @@
 				</table>
 			</div>
         </div>
-		<AddUserModal v-model="isUserAddModalOpen" />
+	  <AddUserModal v-model="isUserAddModalOpen" />
 	</div>
-</template>
-
-<script>
-import { ref } from 'vue';
-import { mapGetters, mapActions } from 'vuex';
-import AddUserModal from '../components/Modals/AddUser.vue';
-
-export default {
+  </template>
+  
+  <script>
+  import { ref } from 'vue';
+  import { mapGetters, mapActions } from 'vuex';
+  import AddUserModal from '../components/Modals/AddUser.vue';
+  
+  export default {
 	name: "TeamPage",
 	components: {
-		AddUserModal
+	  AddUserModal
 	},
 	setup() {
-		const isUserAddModalOpen = ref(false);
-
-		const openUserAddModal = () => {
-			isUserAddModalOpen.value = true;
-		};
-
-		return {
-			isUserAddModalOpen,
-			openUserAddModal,
-		};
+	  const isUserAddModalOpen = ref(false);
+  
+	  const openUserAddModal = () => {
+		isUserAddModalOpen.value = true;
+	  };
+  
+	  return {
+		isUserAddModalOpen,
+		openUserAddModal,
+	  };
 	},
 	computed: {
-		...mapGetters('team', ['filteredTeam', 'searchQuery'])
+	  ...mapGetters('team', ['filteredTeam', 'searchQuery'])
 	},
 	methods: {
-		...mapActions('team', ['fetchTeam', 'setSearchQuery'])
+	  ...mapActions('team', ['fetchTeam', 'setSearchQuery'])
 	},
 	created() {
-		this.fetchTeam();
+	  this.fetchTeam();
 	}
-};
-</script>
+  };
+  </script>

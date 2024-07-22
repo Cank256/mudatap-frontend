@@ -46,6 +46,7 @@
                               name="email"
                               type="email"
                               autocomplete="email"
+                              v-model="email"
                               class="block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-blue-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-blue-200 sm:text-sm sm:leading-6"
                               required
                             />
@@ -82,6 +83,7 @@
 
 <script>
 import { ref, watch, computed } from 'vue';
+import { useStore } from "vuex";
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue';
 import { UserIcon } from '@heroicons/vue/24/outline';
 
@@ -104,6 +106,8 @@ export default {
   emits: ["update:modelValue"],
   setup(props, { emit }) {
     const isOpen = computed(() => props.modelValue);
+    const store = useStore();
+    const email = ref('');
 
     watch(() => props.modelValue, (newVal) => {
       isOpen.value = newVal;
@@ -113,15 +117,20 @@ export default {
       emit("update:modelValue", false);
     };
 
-    const handleSubmit = () => {
-      // Handle form submission logic here
-      closeModal();
+    const handleSubmit = async () => {
+    try {
+        await store.dispatch('team/addTeamMember', email.value);
+        closeModal();
+    } catch (error) {
+        console.error("Failed to add team member:", error);
+    }
     };
 
     return {
       isOpen,
       closeModal,
       handleSubmit,
+      email
     };
   },
 };

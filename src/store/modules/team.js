@@ -17,7 +17,7 @@ const getters = {
     filteredTeam: (state) => {
         return Array.isArray(state.team) ? state.team.filter(member => {
             return (
-                member.name.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
+                member.name?.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
                 member.email.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
                 member.workspace.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
                 member.department.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
@@ -49,6 +49,18 @@ const actions = {
         try {
             const response = await axios.get(`${apiUrl}users`);
             commit('SET_TEAM', response.data);
+        } catch (error) {
+            commit('SET_ERROR', error);
+        } finally {
+            commit('SET_LOADING', false);
+        }
+    },
+    async addTeamMember({ commit, dispatch }, email) {
+        commit('SET_LOADING', true);
+        try {
+            await axios.post(`${apiUrl}users`, { email });
+            // Refresh the team list
+            await dispatch('fetchTeam');
         } catch (error) {
             commit('SET_ERROR', error);
         } finally {
